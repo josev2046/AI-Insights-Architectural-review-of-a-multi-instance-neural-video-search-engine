@@ -1,6 +1,6 @@
 # AI Insights: Architectural review of a multi-instance neural video search engine
 
-> **Note:** This repository provides an architectural overview and technical case study for the AI Insights project. The source code is currently maintained in a private repository.
+> **Note:** This repository provides an architectural overview and technical case study for my AI Insights prototype. The source code is currently maintained in a private repository.
 
 ## Abstract
 
