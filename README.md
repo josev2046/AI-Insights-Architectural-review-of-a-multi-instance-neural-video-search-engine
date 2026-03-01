@@ -1,5 +1,7 @@
 # AI Insights: Architectural review of a multi-instance neural video search engine
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18827669.svg)](https://doi.org/10.5281/zenodo.18827669)
+
 > **Note:** This repository provides an architectural overview and technical case study for my AI Insights prototype. The source code is currently maintained in a private repository.
 
 ## Abstract
