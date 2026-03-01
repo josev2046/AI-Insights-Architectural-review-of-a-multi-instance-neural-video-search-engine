@@ -1,0 +1,46 @@
+@startuml
+!theme plain
+skinparam SequenceMessageAlign center
+skinparam ParticipantPadding 20
+skinparam BoxPadding 10
+
+actor "User" as user
+participant "Frontend\n(React)" as frontend
+participant "Backend\n(FastAPI)" as backend
+database "Twelve Labs API\n(Neural Engine)" as twelve
+
+user -> frontend : Inputs natural language query\n(e.g., "Wildlife in canopy")
+activate frontend
+
+frontend -> backend : POST /api/search_multiple\n{ "query": "..." }
+activate backend
+
+backend -> twelve : POST /search\n(query, index_id, visual threshold)
+activate twelve
+note right of twelve
+  Analyses visual/audio
+  vectors across indexed
+  video archive
+end note
+
+twelve --> backend : Returns multiple matches\n(video_id, start_time, confidence)
+deactivate twelve
+
+note over backend
+  Applies 10-second global
+  timecode deduplication filter
+end note
+
+loop For up to 5 unique instances
+    backend -> twelve : GET /indexes/{id}/videos/{video_id}
+    activate twelve
+    twelve --> backend : Returns source_url
+    deactivate twelve
+end
+
+backend --> frontend : Returns array of curated instances\n[{video_url, timecode_seconds, summary}]
+deactivate backend
+
+frontend -> user : Renders main player and instances sidebar\nAuto-plays primary match
+deactivate frontend
+@enduml
