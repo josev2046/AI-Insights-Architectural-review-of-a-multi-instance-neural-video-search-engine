@@ -16,6 +16,12 @@ This AI Insights project was developed to bypass traditional metadata entirely. 
 * **Temporal deduplication and clustering:** Video search presents a unique challenge because it is a time-series medium. A single continuous camera pan might trigger dozens of positive machine matches within a few seconds. The system uses a custom backend algorithm to group matches that occur within a 10-second temporal window. This prevents the user interface from being overwhelmed by repetitive clips of the exact same scene, significantly reducing cognitive load.
 * **Targeted temporal navigation:** The frontend is designed around a split-screen interface that auto-plays the primary match immediately while generating a clickable, curated list of alternative instances. This allows researchers to jump instantly between exact moments across entirely different archival files without the need for manual scrubbing or timeline manipulation.
 
+## Demo
+
+
+https://github.com/user-attachments/assets/d8e55461-42cd-45ad-bb16-d69991fe0a77
+
+
 ## Technology stack
 
 The application deliberately separates the user interface, data processing logic, and artificial intelligence analysis into distinct environments. This decoupled architecture ensures application stability, protects secure credentials, and allows for independent scaling.
